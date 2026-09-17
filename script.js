@@ -6,14 +6,12 @@ function completeQuest(amount) {
 
     if (xp >= 100) {
         level++;
-        xp = xp - 100;
+        xp -= 100;
         alert("LEVEL UP! ⚔️");
     }
 
-    updateSystem();
-}
-
-function updateSystem() {
     document.getElementById("xp").textContent = xp + " / 100";
     document.getElementById("level").textContent = level;
 }
+
+window.completeQuest = completeQuest;
