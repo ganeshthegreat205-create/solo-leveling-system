@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #05070d;
+    color: #d9e7ff;
+    font-family: Arial, sans-serif;
+}
+
+.system {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px 18px;
+}
+
+header {
+    text-align: center;
+    padding: 25px 10px;
+    border: 1px solid #243a5c;
+    background: #0a1020;
+    box-shadow: 0 0 25px rgba(40, 120, 255, 0.15);
+}
+
+.status {
+    color: #55aaff;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 32px;
+    letter-spacing: 4px;
+}
+
+.player {
+    color: #8da8cc;
+}
+
+section {
+    margin-top: 18px;
+    padding: 20px;
+    border: 1px solid #243a5c;
+    background: #080d18;
+}
+
+h2 {
+    margin-top: 0;
+    color: #6bb7ff;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.level-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.xp-bar {
+    height: 14px;
+    background: #182235;
+    border: 1px solid #31517c;
+}
+
+#xp-fill {
+    width: 0%;
+    height: 100%;
+    background: #4da3ff;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-grid div {
+    padding: 13px;
+    background: #0d1525;
+    border: 1px solid #1c3556;
+}
+
+.stat-grid b {
+    float: right;
+    color: #72baff;
+}
+
+.quest {
+    width: 100%;
+    margin: 7px 0;
+    padding: 15px;
+    border: 1px solid #1c3556;
+    background: #0d1525;
+    color: #d9e7ff;
+    text-align: left;
+    font-size: 15px;
+}
+
+.quest span {
+    float: right;
+    color: #55aaff;
+}
+
+.quest:hover {
+    background: #14223a;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+}
