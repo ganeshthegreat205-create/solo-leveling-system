@@ -1,36 +1,19 @@
 let xp = 0;
 let level = 1;
 
-const quests = document.querySelectorAll(".quest");
-const xpText = document.getElementById("xp-text");
-const xpFill = document.getElementById("xp-fill");
+function completeQuest(amount) {
+    xp += amount;
 
-quests.forEach(function (quest) {
-
-    quest.addEventListener("click", function () {
-
-        if (quest.classList.contains("completed")) {
-            return;
-        }
-
-        const reward = Number(quest.dataset.xp);
-
-        xp += reward;
-
-        quest.classList.add("completed");
-
-        updateSystem();
-    });
-});
-
-function updateSystem() {
-
-    while (xp >= 100) {
-        xp -= 100;
+    if (xp >= 100) {
         level++;
+        xp = xp - 100;
+        alert("LEVEL UP! ⚔️");
     }
 
-    xpText.textContent = xp + " / 100 XP";
+    updateSystem();
+}
 
-    xpFill.style.width = xp + "%";
-      }
+function updateSystem() {
+    document.getElementById("xp").textContent = xp + " / 100";
+    document.getElementById("level").textContent = level;
+}
