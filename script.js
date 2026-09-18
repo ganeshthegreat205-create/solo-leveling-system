@@ -1,5 +1,13 @@
-let xp = Number(localStorage.getItem("xp")) || 0;
-let level = Number(localStorage.getItem("level")) || 1;
+let xp = Number(localStorage.getItem("xp"));
+let level = Number(localStorage.getItem("level"));
+
+if (!Number.isFinite(xp)) {
+    xp = 0;
+}
+
+if (!Number.isFinite(level) || level < 1) {
+    level = 1;
+}
 
 let completedQuests =
     JSON.parse(localStorage.getItem("completedQuests")) || {};
@@ -13,7 +21,7 @@ function completeQuest(questName, amount) {
         return;
     }
 
-    xp += amount;
+    xp += Number(amount);
 
     if (xp >= 100) {
         level++;
@@ -35,7 +43,6 @@ function completeQuest(questName, amount) {
 }
 
 function updateSystem() {
-
     document.getElementById("xp").textContent =
         xp + " / 100";
 
